@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Note App</h1>
+    </header>
+    <main>
+        <div class="note-app-container">
+            <p id="note-app-title">Title:<input type="text" name="" id="note-title" placeholder="Take a title..."></p>
+            
+            
+            <input type="text" name="" id="note-input" placeholder="Take a note...">
+            <i class="fa-solid fa-circle-plus" id="add-note"><span class="tooltiptext">Add</span></i>
+        </div></i>
+        <p id="error-message"></p>
+        </div>
+        <div class="tasks-area">
+            <div class="task-card">
+                <p class="task-card-title">Title:<span>Claim</span></p>
+                <p>Học viên có nhiều suy nghĩ khác nhau về một bài tập</p>
+                <div class="icon"><i class="fa-solid fa-trash"></i></div>
+            </div>
+
+            <div class="task-card">
+                <p class="task-card-title">Title:<span>クレーム</span></p>
+                <p>Luồng suy nghĩ, cách làm, cách triển khai là khác nhau</p>
+                <div class="icon">
+                    </i><i class="fa-solid fa-trash" id="delete-note">
+                        <span class="tooltiptext">Delete</span></i></div>
+            </div>
+            <div class="task-card">
+                <p class="task-card-title">Title:<span>Khiếu nại</span></p>
+                <p>Không hướng dân chi tiết cụ thể sẽ tốn thời gian của 2 bên</p>
+                <div class="icon"><i class="fa-solid fa-trash"></i></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script src="/dist/app.js"></script>
+
+</html>

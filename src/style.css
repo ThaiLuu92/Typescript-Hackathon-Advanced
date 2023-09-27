@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(227, 217, 217);
+}
+header {
+  background-color: rgb(234, 186, 30);
+  padding: 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS NOTE ADD */
+.note-app-container {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 300px;
+  min-height: 120px;
+  border: 0.5px solid #aba4a4;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.note-app-container > #note-app-title {
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  
+}
+
+.note-app-container > #note-app-title > #note-title {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  
+
+}
+.note-app-container > #note-input {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  
+}
+
+.note-app-container i {
+  font-size: 30px;
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  color: rgb(234, 186, 30);
+  cursor: pointer;
+  
+}
+.note-app-container i:hover {
+  color: rgb(227, 217, 217);
+}
+
+/* CSS TASK */
+.tasks-area {
+  width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    padding: 40px;
+
+}
+
+.task-card {
+  padding-top: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  min-width: 250px;
+  min-height: 100px;
+  border: 0.5px solid #aba4a4;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.task-card .task-card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.task-card .task-card-title span {
+  padding-left: 15px;
+}
+
+.task-card > p {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.task-card .icon {
+  padding: 0 15px;
+  padding-top: 10px;
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.task-card .icon i {
+background-color:rgb(248, 247, 247) ;
+padding: 8px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.task-card .icon i:hover {
+background-color:rgb(220, 213, 213) ;
+color: rgb(234, 186, 30);
+}
+
+/* CSS error-message */
+#error-message {
+    color: red;
+    position: relative;
+    top: -35px;
+    left: -15px;
+}
+
+/* CSS Tooltip */
+.fa-solid {
+    position: relative;
+}
+
+.fa-solid .tooltiptext {
+  visibility: hidden;
+  width: 70px;
+  background-color:rgb(227, 217, 217);
+  color: #333;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -33px;
+   margin-bottom: 2px;
+}
+
+.fa-solid:hover .tooltiptext {
+  visibility: visible;
+}

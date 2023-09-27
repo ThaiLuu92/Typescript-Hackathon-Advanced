@@ -21,16 +21,14 @@ function saveNotes(notes: Note[]): void {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-//  Hiển thị danh sách các ghi chú lên giao diện
+//  Hiển thị danh sách các ghi chú
 const renderNotes = (): void => {
   const notes = getNotes();
   const tasksArea = document.querySelector(".tasks-area");
 
   if (tasksArea) {
-    // Tạo chuỗi HTML để chứa các ghi chú
     let notesHTML = "";
 
-    // Duyệt qua danh sách ghi chú và thêm chúng vào chuỗi HTML
     notes.forEach((note, index) => {
       notesHTML += `
         <div class="task-card">
@@ -45,7 +43,7 @@ const renderNotes = (): void => {
 
     tasksArea.innerHTML = notesHTML;
 
-    // Đặt sự kiện cho nút "Xóa" ở mỗi ghi chú
+    //  "Xóa" ở mỗi ghi chú
     notes.forEach((note, index) => {
       const deleteButton = document.getElementById(
         `delete-note-${index}`
@@ -69,7 +67,7 @@ addButton?.addEventListener("click", () => {
   const noteTextTitle = noteInputTitle.value.trim();
 
   if (noteText === "" || noteTextTitle === "") {
-    // Nếu ô input trống, hiển thị thông báo lỗi
+    // Nếu ô input trống, thông báo lỗi
     const errorMessage = document.getElementById(
       "error-message"
     ) as HTMLParagraphElement;
@@ -82,7 +80,7 @@ addButton?.addEventListener("click", () => {
   ) as HTMLParagraphElement;
   errorMessage.textContent = "";
 
-  // Tạo một đối tượng Note với tiêu đề và nội dung
+  // Tạo một obj
   const newNote: Note = {
     title: noteTextTitle,
     content: noteText,
@@ -91,12 +89,12 @@ addButton?.addEventListener("click", () => {
   addNote(newNote);
   renderNotes();
 
-  // Xóa nội dung trong các ô nhập
+  // Xóa nội dung trong các ô input
   noteInput.value = "";
   noteInputTitle.value = "";
 });
 
-//  Gọi hàm để hiển thị danh sách ghi chú ban đầu
+//  Gọi hàm để hiển thị
 renderNotes();
 
 //  Thêm ghi chú mới

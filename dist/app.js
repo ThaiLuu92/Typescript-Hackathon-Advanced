@@ -13,14 +13,12 @@ function getNotes() {
 function saveNotes(notes) {
     localStorage.setItem("notes", JSON.stringify(notes));
 }
-//  Hiển thị danh sách các ghi chú lên giao diện
+//  Hiển thị danh sách các ghi chú
 const renderNotes = () => {
     const notes = getNotes();
     const tasksArea = document.querySelector(".tasks-area");
     if (tasksArea) {
-        // Tạo chuỗi HTML để chứa các ghi chú
         let notesHTML = "";
-        // Duyệt qua danh sách ghi chú và thêm chúng vào chuỗi HTML
         notes.forEach((note, index) => {
             notesHTML += `
         <div class="task-card">
@@ -33,7 +31,7 @@ const renderNotes = () => {
       `;
         });
         tasksArea.innerHTML = notesHTML;
-        // Đặt sự kiện cho nút "Xóa" ở mỗi ghi chú
+        //  "Xóa" ở mỗi ghi chú
         notes.forEach((note, index) => {
             const deleteButton = document.getElementById(`delete-note-${index}`);
             deleteButton.addEventListener("click", () => {
@@ -50,25 +48,25 @@ addButton?.addEventListener("click", () => {
     const noteText = noteInput.value.trim();
     const noteTextTitle = noteInputTitle.value.trim();
     if (noteText === "" || noteTextTitle === "") {
-        // Nếu ô input trống, hiển thị thông báo lỗi
+        // Nếu ô input trống, thông báo lỗi
         const errorMessage = document.getElementById("error-message");
         errorMessage.textContent = "Vui lòng nhập cả tiêu đề và nội dung.";
         return;
     }
     const errorMessage = document.getElementById("error-message");
     errorMessage.textContent = "";
-    // Tạo một đối tượng Note với tiêu đề và nội dung
+    // Tạo một obj
     const newNote = {
         title: noteTextTitle,
         content: noteText,
     };
     addNote(newNote);
     renderNotes();
-    // Xóa nội dung trong các ô nhập
+    // Xóa nội dung trong các ô input
     noteInput.value = "";
     noteInputTitle.value = "";
 });
-//  Gọi hàm để hiển thị danh sách ghi chú ban đầu
+//  Gọi hàm để hiển thị
 renderNotes();
 //  Thêm ghi chú mới
 const addNote = (newNote) => {

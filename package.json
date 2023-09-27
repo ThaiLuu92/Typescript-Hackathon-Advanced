@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "typescript": "^5.2.2"
+  },
+  "name": "typescript-hackathon-advanced",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc --w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
